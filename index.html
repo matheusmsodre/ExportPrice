@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+
+<body>
+    <h2 id="tema">Preço de Exportação</h2>
+
+    <div id="container">
+
+        <div id="main">
+            <h2>Deduções</h2>
+
+            <label for="valor">Preço de Mercado Interno: </label>
+            <input type="number" id="price" required>
+
+            <label for="valor">Alíquota do IPI (%)</label>
+            <input type="number" id="ipi" required>
+
+            <label for="valor">ICMS (%)</label>
+            <input type="number" id="icms" required>
+
+            <label for="valor">CONFINS (%)</label>
+            <input type="number" id="confins" required>
+
+            <label for="valor">PIS (%)</label>
+            <input type="number" id="pis" required>
+
+            <label for="valor">Lucro (%)</label>
+            <input type="number" id="lucro1" required>
+
+            <label for="valor">Embalagem (R$)</label>
+            <input type="number" id="embaI" required>
+
+        </div>
+
+        <div id="main">
+            <h2>Inclusões</h2>
+
+            <label for="valor">Embalagem para exportação (R$)</label>
+            <input type="number" id="embaE" required>
+
+            <label for="valor">Frete + Seguro (R$)</label>
+            <input type="number" id="frete" required>
+
+            <label for="valor">Lucro na exportação (%)</label>
+            <input type="number" id="lucro2" required>
+
+            <label for="valor">Taxa de câmbio (R$)</label>
+            <input type="number" id="taxa" required>
+
+            <br><br>
+            <button type="button" onclick="calcularDesconto()">Calcular</button>
+            <svg onclick="reset()" xmlns="http://www.w3.org/2000/svg" height="16" width="16"
+                viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                <path
+                    d="M386.3 160H336c-17.7 0-32 14.3-32 32s14.3 32 32 32H464c17.7 0 32-14.3 32-32V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v51.2L414.4 97.6c-87.5-87.5-229.3-87.5-316.8 0s-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3s163.8-62.5 226.3 0L386.3 160z" />
+            </svg>
+        </div>
+
+        <div id="extras">
+            <div class="extra a">
+                <span>Abatimentos</span>
+                <br>
+            </div>
+            <div class="extra b">
+                <span>Acréscimos</span>
+                <br>
+            </div>
+            <div class="extra c">
+                <span>Total</span>
+                <br>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>
