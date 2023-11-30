@@ -28,29 +28,29 @@ function calcularDesconto() {
     document.querySelector('.extra.b').innerHTML = '<span>Acréscimos</span><br>';
     document.querySelector('.extra.c').innerHTML = '<span>Total</span><br>';
 
-    document.querySelector('.extra.a').innerHTML += `<p>IPI: ${ipiTax}</p>`;
-    document.querySelector('.extra.a').innerHTML += `<p>ICMS: ${newPrice * icms}</p>`;
-    document.querySelector('.extra.a').innerHTML += `<p>CONFINS: ${newPrice * confins}</p>`;
-    document.querySelector('.extra.a').innerHTML += `<p>PIS: ${newPrice * pis}</p>`;
-    document.querySelector('.extra.a').innerHTML += `<p>Lucro: ${newPrice * lucro1}</p>`;
-    document.querySelector('.extra.a').innerHTML += `<p>Embalagem: ${embaI}</p>`;
-    document.querySelector('.extra.a').innerHTML += `<p>Total: ${deducoesTotais}</p>`;
-    document.querySelector('.extra.c').innerHTML += `<p>1º Subtotal: R$${finalPrice}</p>`;
+    document.querySelector('.extra.a').innerHTML += `<p>IPI: ${ipiTax.toFixed(2)}</p>`;
+    document.querySelector('.extra.a').innerHTML += `<p>ICMS: ${(newPrice * icms).toFixed(2)}</p>`;
+    document.querySelector('.extra.a').innerHTML += `<p>CONFINS: ${(newPrice * confins).toFixed(2)}</p>`;
+    document.querySelector('.extra.a').innerHTML += `<p>PIS: ${(newPrice * pis).toFixed(2)}</p>`;
+    document.querySelector('.extra.a').innerHTML += `<p>Lucro: ${(newPrice * lucro1).toFixed(2)}</p>`;
+    document.querySelector('.extra.a').innerHTML += `<p>Embalagem: ${embaI.toFixed(2)}</p>`;
+    document.querySelector('.extra.a').innerHTML += `<p>Total: ${deducoesTotais.toFixed(2)}</p>`;
+    document.querySelector('.extra.c').innerHTML += `<p>1º Subtotal: R$${finalPrice.toFixed(2)}</p>`;
 
     finalPrice += embaE + frete;
-    document.querySelector('.extra.c').innerHTML += `<p>2º Subtotal: R$${finalPrice}</p>`;
+    document.querySelector('.extra.c').innerHTML += `<p>2º Subtotal: R$${finalPrice.toFixed(2)}</p>`;
 
     let calculoLucro = (lucro2 * finalPrice)/(100-lucro2);
     finalPrice += calculoLucro;
 
     let dollarFinalPrice = finalPrice/taxa;
 
-    document.querySelector('.extra.b').innerHTML += `<p>Embalagem para Exportação: ${embaE}</p>`;
-    document.querySelector('.extra.b').innerHTML += `<p>Frete e seguro: ${frete}</p>`;
-    document.querySelector('.extra.b').innerHTML += `<p>Lucro: ${calculoLucro}</p>`;
+    document.querySelector('.extra.b').innerHTML += `<p>Embalagem para Exportação: ${embaE.toFixed(2)}</p>`;
+    document.querySelector('.extra.b').innerHTML += `<p>Frete e seguro: ${frete.toFixed(2)}</p>`;
+    document.querySelector('.extra.b').innerHTML += `<p>Lucro: ${calculoLucro.toFixed(2)}</p>`;
 
-    document.querySelector('.extra.c').innerHTML += `<p>Preço de exportação: R$${finalPrice}</p>`;
-    document.querySelector('.extra.c').innerHTML += `<p>Preço de exportação (dólar): $${dollarFinalPrice}</p>`;
+    document.querySelector('.extra.c').innerHTML += `<p>Preço de exportação: R$${finalPrice.toFixed(2)}</p>`;
+    document.querySelector('.extra.c').innerHTML += `<p>Preço de exportação (dólar): $${dollarFinalPrice.toFixed(2)}</p>`;
     //alert(finalPrice)
     //alert(finalPrice/taxa)
 }
